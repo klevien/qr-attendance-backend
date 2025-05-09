@@ -9,7 +9,14 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors({ origin: ["https://qrcode-attendance-system.vercel.app"] })); // Allow frontend to communicate with backend
+app.use(
+  cors({
+    origin: [
+      "https://qrcode-attendance-system.vercel.app", // Primary domain
+      "https://qrcode-attendance-system-cikbji9ho-klevs-projects-bb173704.vercel.app", // preview
+    ],
+  })
+); // Allow frontend to communicate with backend
 
 // Routes
 app.use("/api/attendance", attendanceRoutes);
