@@ -19,7 +19,7 @@ mongoose
   .connect(process.env.MONGO_URI) // Removed deprecated options
   .then(() => {
     // Listen for requests
-    app.listen(process.env.PORT, () => {
+    app.listen("https://qrcode-attendance-system.vercel.app/", () => {
       console.log(
         `Connected to MongoDB & listening on port ${process.env.PORT}`
       );
